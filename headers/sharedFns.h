@@ -3,6 +3,6 @@
     #define MYFUNCTIONS_H
 
     // Function declarations (prototypes)
-    void printFooter();
+    void printSpacer();
 
     #endif // MYFUNCTIONS_H

@@ -12,6 +12,6 @@ int main(){
     std::cin >> name;
     std::cout << "Welcome " << name << std::endl;
 
-    printFooter();
+    printSpacer();
     return 0;
 }
