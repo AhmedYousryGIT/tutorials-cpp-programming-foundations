@@ -4,6 +4,9 @@ https://www.linkedin.com/learning/complete-guide-to-c-plus-plus-programming-foun
 OS configuration changes:
 I changed the Vscode settings to work on Windows OS rather than Linux
 
+Setting a default debuger:
+    I added a launch.json file to set a default debuger for the project
+
 Adding shared functions to the whole project:
     File structure changes:
     I created a file with shared functions to be used with all project files
