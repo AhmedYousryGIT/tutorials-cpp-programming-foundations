@@ -4,9 +4,14 @@
 
 #include <iostream>
 #include <cstdint>
+#include "sharedFns.h"
 
 int main(){
+    printSpacer();
+    
     
     std::cout << std::endl << std::endl;
+    
+    printSpacer();
     return 0;
 }
