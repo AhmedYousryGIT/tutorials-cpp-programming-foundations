@@ -8,11 +8,19 @@
 
 std::vector<int> SelectKeyPoints(std::vector<int> distances, int checkpointIndex){
     std::vector<int> result;
+    /*My Solution
+    result = {distances[0], distances[checkpointIndex], distances[distances.size()-1]};
+    */
 
-    result.push_back(*distances.begin());         // Add the first element
-    result.push_back(distances[checkpointIndex]); // Add the element at checkpointIndex
-    result.push_back(distances.back());           // Add the last element
+    //Another Solution
+    result.push_back(*distances.begin());   //OR:   result.push_back(distances.front());
+    result.push_back(distances[checkpointIndex]);
+    result.push_back(*(distances.end()-1)); //OR:   result.push_back(distances.back());
     
+    //Notice that .front(), and .back() do not need dereferencing
+    //while .begin(), .end() need dereferencing.
+    //Also .end() returns the pointer for the next value to be added not the last existing value like .back()
+
     return result;
 }
 
