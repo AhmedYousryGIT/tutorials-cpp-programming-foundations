@@ -13,9 +13,15 @@ std::vector<int> SelectKeyPoints(std::vector<int> distances, int checkpointIndex
     */
 
     //Another Solution
+<<<<<<< HEAD
     result.push_back(*distances.begin());   //OR:   result.push_back(distances.front());
     result.push_back(distances[checkpointIndex]);
     result.push_back(*(distances.end()-1)); //OR:   result.push_back(distances.back());
+=======
+    result.push_back(*distances.begin());         // Add the first element
+    result.push_back(distances[checkpointIndex]); // Add the element at checkpointIndex
+    result.push_back(distances.back());           // Add the last element
+>>>>>>> de91bfc26c0fa05b1df14b5b48ba203145b6b7b7
     
     //Notice that .front(), and .back() do not need dereferencing
     //while .begin(), .end() need dereferencing.
