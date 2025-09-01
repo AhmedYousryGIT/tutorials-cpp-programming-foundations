@@ -1,5 +1,5 @@
 // Complete Guide to C++ Programming Foundations
-// Challenge Solution 05_10
+// Challenge 05_09
 // Calculate Resource Cost, by Eduardo Corpeño 
 
 #include <iostream>
@@ -15,17 +15,18 @@ struct Resource{
 double CalculateTotalCost(std::vector<Resource> resources){
     double result = 0.0;
     
-    for (const auto& resource : resources){
-        double costWithTax = resource.baseCost;
-        
-        if (resource.type == 'B')      // Basic resource: 5% tax
-            costWithTax += resource.baseCost * 0.05;
-        else if (resource.type == 'L') // Luxury resource: 15% tax
-            costWithTax += resource.baseCost * 0.15;
+    for (auto &x : resources) {
+        switch (x.type){
+            case 'B':
+                result += x.baseCost * 1.05;
+            break;
+            case 'L':
+                result += x.baseCost * 1.15;
+            break;
+            default:
+                result += x.baseCost;
+        }
 
-        // Essential resource 'E' has no tax, so no change is needed
-        
-        result += costWithTax;
     }
     
     return result;
