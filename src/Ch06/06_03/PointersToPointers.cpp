@@ -59,9 +59,6 @@ void deletePtr_proper(std::string** argPtr) {
     // The passed pointer is referred to as *argPtr
     delete *argPtr;     // deletes the value held by the passed pointer
     *argPtr = nullptr;  // sets the passed pointer to a null pointer
-<<<<<<< HEAD
     argPtr = nullptr;   // explicitly delete the argPtr to safely exit the function, though this should be automatically
                         // handled
-=======
->>>>>>> 41f91c21290c1f4beb4502e1b9bd228f46577157
 }
