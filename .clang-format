@@ -1,3 +1,17 @@
 BasedOnStyle: Google
 BreakBeforeBraces: Attach
 IndentWidth: 4
+# Increase the penalty for breaking lines after a C++ stream operator.
+# The higher the value, the less likely clang-format is to break the line.
+PenaltyBreakBeforeAfterOperator: 1000
+
+# Increase the penalty for breaking lines after a C++ stream operator.
+# This is an alias for the above and can be used for older clang-format versions.
+PenaltyBreakBeforeStreamInsert: 1000
+
+# Increase the penalty for breaking lines after a string literal.
+# This can help keep long string chains on a single line.
+PenaltyBreakStringLiteral: 1000
+
+# You can also increase the overall column limit to allow for longer lines.
+ColumnLimit: 120
