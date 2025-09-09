@@ -9,6 +9,7 @@
                 "-g",
                 "-std=c++17",
                 "-I${workspaceFolder}/headers",
+                "-I${workspaceFolder}/headers/*/*.cpp",
                 "${fileDirname}/*.cpp",
                 "${workspaceFolder}/src/sharedFns.cpp",
                 "-o",

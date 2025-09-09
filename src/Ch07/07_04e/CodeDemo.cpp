@@ -1,31 +1,28 @@
 // Complete Guide to C++ Programming Foundations
 // Exercise 07_04
-// Constructors and Destructors, by Eduardo Corpeño 
+// Constructors and Destructors, by Eduardo Corpeño
 
-#include <iostream>
-#include <vector>
-#include <string>
 #include <algorithm>
+#include <iostream>
+#include <string>
+#include <vector>
 
-class Inventory{
+class Inventory {
 public:
     // Default Constructor
-    Inventory(): capacity(10){
-        items = new std::vector<std::string>();
-    }
+    Inventory() : capacity(10) { items = new std::vector<std::string>(); }
 
     // Overloaded Constructor
-    Inventory(int capacity_i): capacity(capacity_i){
-        items = new std::vector<std::string>();
-    }
+    
+    Inventory(int capacity_i) : capacity(capacity_i) { items = new std::vector<std::string>(); }
 
     // Destructor
-    ~Inventory(){
-        delete items; // Prevent memory leak by deallocating the dynamic vector
+    ~Inventory() {
+        delete items;  // Prevent memory leak by deallocating the dynamic vector
     }
 
     // Add item to inventory
-    void addItem(const std::string& item){
+    void addItem(const std::string& item) {
         if (items->size() < capacity)
             items->push_back(item);
         else
@@ -33,7 +30,7 @@ public:
     }
 
     // Remove item from inventory
-    void removeItem(const std::string& item){
+    void removeItem(const std::string& item) {
         auto it = std::find(items->begin(), items->end(), item);
         if (it != items->end())
             items->erase(it);
@@ -42,7 +39,7 @@ public:
     }
 
     // Access item by index
-    std::string getItem(int index) const{
+    std::string getItem(int index) const {
         if (index >= 0 && index < items->size())
             return (*items)[index];
         else
@@ -50,14 +47,12 @@ public:
     }
 
     // Get number of items in the inventory
-    int getItemCount() const{
-        return items->size();
-    }
+    int getItemCount() const { return items->size(); }
 
     // Display inventory contents
-    void displayInventory() const{
+    void displayInventory() const {
         std::cout << "Inventory: [ ";
-        for (size_t i = 0; i < items->size(); ++i){
+        for (size_t i = 0; i < items->size(); ++i) {
             std::cout << (*items)[i];
             if (i < items->size() - 1) std::cout << ", ";
         }
@@ -65,12 +60,11 @@ public:
     }
 
 private:
-    std::vector<std::string> *items; // Pointer to a vector of items
-    int capacity; // Maximum number of items allowed
+    std::vector<std::string>* items;  // Pointer to a vector of items
+    int capacity;                     // Maximum number of items allowed
 };
 
-int main(){
-    
+int main() {
     std::cout << std::endl << std::endl;
     return 0;
 }

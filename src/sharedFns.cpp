@@ -1,7 +1,7 @@
 #include "../headers/sharedFns.h"
+
 #include <iostream>
 
 void printSpacer() {
-    std::cout << "\n-------------------------------\n\n";
+    std::cout << "\n--------------------------------\n\n";
 }
-
